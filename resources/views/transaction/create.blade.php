@@ -41,7 +41,7 @@
                                             <td>Rp{{ $items->total_price }},00</td>
                                             <td>{{ $items->created_at->format('d F Y') }} ,
                                                 {{ $items->created_at->addHours(7)->format('H:i:s') }}</td>
-                                            <td><a href="{{ route('transaction.receipt', $items->id_transaction) }}"
+                                            <td><a href="{{ route('transaction.receipt') }}"
                                                 class="btn btn-primary">View</a></td>
                                         </tr>
                                     @endforeach

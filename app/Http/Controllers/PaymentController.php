@@ -7,13 +7,16 @@ use Illuminate\Http\Request;
 
 class PaymentController extends Controller
 {
-    public function showReceipt($id)
+    public function showReceipt()
     {
-        $transaction = Transaction::find($id);
+        $id_user = auth()->user()->id;
+        $transactions = Transaction::select("*")
+        ->where("id", $id_user)
+        ->get();
         // Pastikan transaksi ditemukan sebelum melanjutkan
-        if (!$transaction) {
+        if (!$transactions) {
             return abort(404);
         }
-        return view('receipt', compact('transaction'));
+        return view('receipt', compact('transactions'));
     }
 }

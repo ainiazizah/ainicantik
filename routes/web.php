@@ -91,4 +91,4 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::post('/register', [AuthController::class, 'doRegister'])->name('do.register');
 Route::post('/login', [AuthController::class, 'doLogin'])->name('do.login');
 
-Route::get('/transaction/{id}/receipt', [PaymentController::class, 'showReceipt'])->name('transaction.receipt');
+Route::get('/transaction/receipt', [PaymentController::class, 'showReceipt'])->name('transaction.receipt');

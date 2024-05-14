@@ -44,12 +44,15 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                   @foreach ($transactions as $transaction)
                                 <tr>
                                     <td>{{ $transaction->id_transaction }}</td>
                                     <td>{{ $transaction->name_product }}</td>
                                     <td>{{ $transaction->qty }}</td>
                                     <td>Rp{{ $transaction->total_price }},00</td>
                                 </tr>
+                                    @endforeach
+                                
                             </tbody>
                         </table>
                         <div class="total">
